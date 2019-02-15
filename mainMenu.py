@@ -5,6 +5,7 @@
 # Based on Advance Wars (Intelligent Systems, Nintendo)
 
 import pygame
+import os
 from pygame.locals import *
 from pygameBaseClass import PygameBaseClass
 from map import *
@@ -111,7 +112,7 @@ class mainMenu(PygameBaseClass):
     def getFiles(self):
         files = []
         for filename in os.listdir('maps'):
-            files.append(filename[:len(filename)-4])
+            files.append(os.path.splitext(filename)[0])
         return files
 
     def select(self):
